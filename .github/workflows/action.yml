@@ -1,0 +1,31 @@
+name: API Files
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create-json
+        id: create-json-1
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "credentials.json"
+          json: ${{ secrets.CREDENTIALS_JSON }}
+          dir: "tokens/"
+      - name: create-json
+        id: create-json-2
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "creds.json"
+          json: ${{ secrets.CREDS_JSON }}
+          dir: "tokens/"
+      - name: create-json
+        id: create-json-3
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "token.json"
+          json: ${{ secrets.TOKENS_JSON }}
+          dir: "tokens/"
