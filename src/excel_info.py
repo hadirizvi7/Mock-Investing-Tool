@@ -9,10 +9,8 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-# If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 
-# The ID and range of a sample spreadsheet.
 SPREADSHEET_ID = '1CWZWHVS9yfGvuP0_rT9LJkcqQoTrV4CjS8D0hX7t2k8'
 
 def findColumns(COL_RANGE):
@@ -20,9 +18,6 @@ def findColumns(COL_RANGE):
     Prints values from a sample spreadsheet.
     """
     creds = None
-    # The file token.json stores the user's access and refresh tokens, and is
-    # created automatically when the authorization flow completes for the first
-    # time.
     if os.path.exists('tokens/token.json'):
         creds = Credentials.from_authorized_user_file('tokens/token.json', SCOPES)
     # If there are no (valid) credentials available, let the user log in.
