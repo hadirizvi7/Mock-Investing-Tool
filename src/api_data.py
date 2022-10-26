@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np 
 from excel_info import findColumns
 from update_sheet import updateColumns
+import time
 
 SYMBOL_RANGE = 'A2:A50'
 AMOUNT_RANGE = 'B2:B50'
@@ -38,3 +39,4 @@ def callAPI():
 if __name__ == '__main__':
     price_list, invested_list = callAPI()
     updateColumns(price_list, invested_list)
+    time.sleep(60)
