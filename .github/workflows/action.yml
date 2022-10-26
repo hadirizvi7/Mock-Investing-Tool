@@ -1,0 +1,21 @@
+    - name: create-json
+      id: create-json-1 # First ID
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "credentials.json"
+        json: ${{ secrets.CREDENTIALS_JSON }}
+        dir: 'tokens/'
+    - name: create-json
+      id: create-json-2  # Second ID
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "creds.json"
+        json: ${{ secrets.CREDS_JSON }}
+        dir: 'tokens/'
+    - name: create-json
+      id: create-json-3  # Second ID
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "token.json"
+        json: ${{ secrets.TOKENS_JSON }}
+        dir: 'tokens/'
