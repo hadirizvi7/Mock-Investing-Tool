@@ -1,4 +1,4 @@
-name: Heroku CI - CD
+name: API Files
 
 on:
   push:
